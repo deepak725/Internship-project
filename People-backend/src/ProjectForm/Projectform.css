@@ -87,3 +87,9 @@
     font-size: 1    em;
     
 }
+
+.textArea-space{
+    white-space: pre-line;
+    white-space: pre-wrap;
+
+}

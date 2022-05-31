@@ -8,10 +8,10 @@ let Project = require('../Modals/projectmdel.js');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'images/Projects');
+        cb(null, 'Images/Projects');
     },
     filename: function(req, file, cb) {   
-        cb(null,   uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+        cb(null,`${uuidv4()}-${Date.now()}${path.extname(file.originalname)}`);
     }
 });
 
@@ -32,7 +32,7 @@ router.route('/add').post(upload.single('image'), (req, res) => {
     var description = req.body.description;
     const proStartingDate = req.body.proStartingDate;
     const proEndingDate = req.body.proEndingDate;
-    var image = req.file.filename;
+    var image = `${process.env.SERVER_URL}/${req.file.filename}`;
 
     const newProjectData = {
         title,
@@ -62,12 +62,12 @@ router.route('/getData').get( async(req,res) => {
 router.route('/getImage').get( (req,res) => {
 
         try{
-            fs.readFile(`./Images/Projects/${req.params.id}`,function (err, image) {
+            fs.readFile(`./Images/Projects/${req.body.id}`,function (err, image) {
                 if (err) {
                     console.log(err)
                 }
                 console.log(image);
-                res.send(image);
+                res.send();
             });
         }catch(error)
         {

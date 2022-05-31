@@ -4,11 +4,15 @@ const cors = require('cors');
 dotenv.config()
 const mongoose = require('mongoose')
 const { connectDatabase } = require("./Database/dbconnect.js")
+const path = require("path")
 connectDatabase()
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+//Images folder
+app.use("/img", express.static(path.join(__dirname, "./Images")));
 
 app.get("/",(req,res) => {
        console.log("hello")

@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import { useState,useEffect } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 import ViewProject from './ProjectData/ViewProject'
 import './Projectform.css'
 
@@ -55,16 +57,34 @@ const Projectform = () => {
 
         if(title.length === 0)
         {
-                alert("Title must be provided");
+               toast.error('Title must be provided!',{position: "top-center",
+               autoClose: 2000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,});
                 return;
         }else if(desc.length === 0)
         {
-                alert("Description must be provided, small description will also work!");
+                toast.error('Description must be provided, small description will also work!',{position: "top-center",
+               autoClose: 2000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,});
                 return;
         }
         else if(!proStartingDate || !proEndingDate || (proEndingDate < proStartingDate) )
         {
-                alert("Please provide valid duration! ");
+                toast.error('Please provide valid duration!',{position: "top-center",
+               autoClose: 2000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,});
                 return;
         }
         
@@ -143,7 +163,7 @@ const Projectform = () => {
                                         setTitle(e.target.value);
                                   }} placeholder="Enter Project title!"  />
 
-                                  < textarea rows={"5"} cols={"50"}  type={"textarea"} className='' onChange={(e)=>{
+                                  < textarea rows={"5"} cols={"50"}   type={"textarea"} className='textArea-space' onChange={(e)=>{
                                       
                                         setDesc(e.target.value);
                                   }} placeholder="Enter project description.."  />
@@ -154,9 +174,9 @@ const Projectform = () => {
                         <br/>
                         <label className='date-label2'   >
                                From  
-                        </label > <input type={"date"} format={'YYYY-MM-DD'} onChange={ (e) =>{setproStartingDate(e.target.value)}}  /> 
+                        </label > <input type={"date"} format={'YYYY-MM-DD'} onChange={ (e) =>{setproStartingDate(new Date(e.target.value).toUTCString())}}  /> 
                         <label className='date-label2'> To (Estimated)  </label> 
-                        <input type={"date"} format={'YYYY-MM-DD'} onChange={ (e) =>{setproEndingDate(e.target.value)}}  />
+                        <input type={"date"} format={'YYYY-MM-DD'} onChange={ (e) =>{setproEndingDate(new Date(e.target.value).toUTCString())}}  />
                          
 
                           <label className='file-input' >
@@ -196,11 +216,25 @@ const Projectform = () => {
             </div>
             <button className='btn btn-danger btn-md'
             onClick={()=>setProjects([])}>Remove All</button>
+
+            {/* <button className='btn btn-primary' onClick={()=>{
+                        toast.success('yess!');      
+            }} /> */}
           </>}
           {projects.length < 1 && <div>No Projects are added yet</div>}
         </div>
                         
-                        
+                <ToastContainer 
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />    
          </>
                          
   
