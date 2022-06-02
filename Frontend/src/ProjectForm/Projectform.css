@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@300&display=swap');
+.form-main{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      /* margin: 2%;   */
+      border: 2px solid black;
+}
+
+.addbtn{
+       width: 33%;    
+       padding : 5%;
+       /* border: 2px solid black; */
+
+}
+ .btn-logo{
+       width: 100%;
+        /* font-weight: bold; */
+        font-size: 2em;
+        font-family: 'Abril Fatface', cursive;}
+
+
+.file-input{
+    font-size: 1em;
+    font-family: 'Abril Fatface', cursive;
+    /* border: 1px solid black; */
+    text-decoration: underline;
+}
+
+
+.addbtn .btn-logo .logo{
+    float: right;
+    font-size: 1em;
+
+}
+
+.addbtn .btn-logo .logo .plus :hover{
+    color: green;
+    cursor: pointer;
+}
+
+.addbtn .btn-logo .logo .minus :hover{
+    color: red;
+    cursor: pointer;
+}
+.people-form2{
+    display: none;
+}
+.people-form{
+    border: 2px solid black;
+    padding: 5%;
+
+}
+
+.people-form input,textarea{
+    display: block;
+    width: 100%;
+    padding: .5rem ;
+    margin: .9vw 0 ;
+    border:0;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.submit-btn{
+   background-color: green;
+   width: 100%;
+   height: 100%;
+   padding: 2%;
+   font-weight: bolder; 
+   cursor: pointer;
+   border-radius: 10px;
+}
+
+.date-label{
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+.date-label2{
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    font-size: 1    em;
+    
+}
+
+.textArea-space{
+    white-space: pre-line;
+    white-space: pre-wrap;
+
+}
