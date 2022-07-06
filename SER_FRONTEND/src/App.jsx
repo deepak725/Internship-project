@@ -1,0 +1,32 @@
+import Research from './SanityClient/Research';
+import './App.css'
+import Project from './SanityClient/Project';
+import Navbar from './Components/NavBar/Navbar';
+import Home from './Components/Home/Home';
+import Event from './SanityClient/Event';
+import Gallery from './Components/Gallery/Gallery';
+import Collabration from './Components/Collabration/collabration';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import People from './Components/People/People';
+// import project from '../../Sanity/schemas/project';
+
+const App = () => {
+  return <div className='App'>
+     
+     <BrowserRouter>
+     <Navbar/>
+      <Routes>
+        <Route path='/'  element={<Home />} />
+        <Route path='/research' element={<Research/>} />
+        <Route path='/projects' element={<Project />} />
+        <Route path='/events' element={<Event />} />
+        {/* <Route path='/goats' component={Goats} /> */}
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/people' element={<People />} />
+        <Route path='/collabration' element={<Collabration/>} />
+      </Routes>
+    </BrowserRouter>
+    </div>;
+};
+
+export default App;

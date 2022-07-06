@@ -19,6 +19,16 @@ export default {
         title: 'About'
       },
       {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        validation: Rule => Rule.required(),
+        options: {
+          source: 'Name',
+          maxLength: 96,
+        },
+      },
+      {
         title:'Want to display him/her on team page ?',
         type:'boolean',
         name:'display',
@@ -52,5 +62,5 @@ export default {
         // ]
       }
 
-    ]
+    ],
 }

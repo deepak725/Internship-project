@@ -1,0 +1,53 @@
+//     {
+    //         title: 'Research Title',
+    //         name:'researchtitle',
+    //         type: "string",
+    //         validation: Rule => Rule.required()
+    //     },
+    //     {
+    //         title: 'Author Name',
+    //         name: 'authorname',
+    //         type: "reference",
+    //         to:[{type:'People'}],
+    //         validation: Rule => Rule.required()
+    //     },
+    //     {
+    //         title: 'Co-Author Name',
+    //         name: 'authorname',
+    //         type: "reference",
+    //         to:[{type:'People'}],
+    //         validation: Rule => Rule.required()
+    //     },
+    //     {
+    //         title: 'Publisher',
+    //         name: 'publisher',
+    //         type: "string",
+    //         validation: Rule => Rule.required()
+    //     },
+    //     {
+    //         name: 'slug',
+    //         title: 'Slug',
+    //         type: 'slug',
+    //         validation: Rule=> Rule.required(),
+    //         options: {
+    //           source: 'researchtitle',
+    //           maxLength: 96,
+    //         },
+    //   },
+    //     {
+    //         title: 'Venue',
+    //         name: 'venue',
+    //         type: "string",
+    //         description: 'The event on which the research was presented',
+    //         validation: Rule => Rule.required()
+    //     },
+    //     {
+    //         title: 'Year',
+    //         name: 'publishngyear',
+    //         type: "date",
+    //         description: 'Year of research publishment',
+    //         validation: Rule => Rule.required(),
+    //         options : {
+    //             dateFormat : 'yyyy',
+    //         }
+    //     },

@@ -1,65 +1,58 @@
 export default {
-    name : 'research',
+    name: 'research',
     type: 'document',
-    title : 'Research',
-    fields : [
+      title: 'Research',
+    fields: [
         {
-            title: 'Research Title',
-            name:'researchtitle',
-            type: "string",
-            validation: Rule => Rule.required()
-        },
-        {
-            title: 'Author Name',
-            name: 'authorname',
-            type: "reference",
-            to:[{type:'People'}],
-            validation: Rule => Rule.required()
-        },
-        {
-            title: 'Publisher',
-            name: 'publisher',
-            type: "string",
-            validation: Rule => Rule.required()
-        },
-        {
-            title: 'Venue',
-            name: 'venue',
-            type: "string",
-            description: 'The event on which the research was presented',
-            validation: Rule => Rule.required()
-        },
-        {
-            title: 'Year',
-            name: 'publishngyear',
-            type: "date",
-            description: 'Year of research publishment',
-            validation: Rule => Rule.required(),
-            options : {
-                dateFormat : 'yyyy',
-            }
-        },
-        {
-            title:'Brief overview of Research paper',
-            name:'briefdescription',
+            name:'title',
+            title:'Details of research',
             type: 'array', 
-            of: [{type: 'block'}],
-            validation:Rule=>Rule.required(),
-        },
-        {
-            title:'Total pages',
-            name:'totalpages',
-            type:"number",
-            validation: Rule => Rule.required(),
-            
-        }
-        ,
-        {
-            title: 'Research Page link',
-            name: 'publishingpage',
-            type: "url",
-            description: 'The page where the research was published',
-            validation: Rule => Rule.required()
-        }
+            of: [
+                {
+                  type: 'block',
+                  marks: {
+                    annotations: [
+                        {
+                            name: 'link',
+                            type: 'object',
+                            title: 'External link',
+                            fields: [
+                              {
+                                name: 'href',
+                                type: 'url',
+                                title: 'URL'
+                              }
+                             
+                            ]
+                          },
+                        {
+                        name: 'internalLink',
+                        type: 'object',
+                        title: 'Internal link',
+                        fields: [
+                          {
+                            name: 'reference',
+                            type: 'reference',
+                            title: 'Reference',
+                            to: [
+                              { type: 'People' },
+                              // other types you may want to link to
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              validation: Rule=> Rule.required()
+            },
+            {
+               title:'Research-category',
+               name:'ResearchCategory', 
+                type: 'array',
+                of: [{type: 'reference', to: {type: 'research-category'}}],
+                validation: Rule=> Rule.required()     
+            }
     ]
-}
+  }

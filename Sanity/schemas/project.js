@@ -13,8 +13,33 @@ export default {
           name:'description',
           title:'Description',
           type: 'array', 
-          of: [{type: 'block'}],
+          of: [{type: 'block',
+          marks: {
+            annotations: [
+                {
+                    name: 'link',
+                    type: 'object',
+                    title: 'External link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL'
+                      }
+                     
+                    ]
+                  }]}}],
           validation: Rule=> Rule.required()
+      },
+      {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        validation: Rule=> Rule.required(),
+        options: {
+          source: 'title',
+          maxLength: 96,
+        },
       },
       {
         name: 'SponsoringAgency',

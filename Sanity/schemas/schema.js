@@ -6,6 +6,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import project from './project'
 import people from './people'
 import research from './research'
+import blogPost from './blog-post'
+import blogAuthor from './blog-author'
+import blogCategory from './blog-category'
+import eventActivities from './event-activities'
+import collabrations from './collabrations'
+import gallery from './gallery'
+import ResearchCategory from './Research-category'
+// import eventActivities from './event-activities'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,6 +25,14 @@ export default createSchema({
     /* Your types here! */
     project,
     people,
-    research
+    research,
+    ResearchCategory,
+    blogPost,
+    blogAuthor,
+    blogCategory,
+    eventActivities,
+    collabrations,
+    gallery
+  
   ]),
 })
