@@ -1,35 +1,61 @@
-import React from 'react'
-import {  Link } from "react-router-dom";
-
-const Navbar = () => {
+import React from "react";
+import { NavLink } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import logo from "./logo.jpeg";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import "./NavBar.css";
+const NavBar = () => {
   return (
     <div>
-    <li>
-      <Link to="/">home</Link>
-    </li>
-    <li>
-      <Link to="/research">Research</Link>
-    </li>
-    <li>
-      <Link to="/projects">Projects</Link>
-    </li>
-    <li>
-      <Link to="/events">Events</Link>
-    </li>
-    <li>
-      <Link to="/people">Peoples</Link>
-    </li>
-    <li>
-      <Link to="/blogs">Blogs</Link>
-    </li>
-     <li>
-      <Link to="/gallery">Gallery</Link>
-    </li>
-    <li>
-      <Link to="/collabration">Collabrations</Link>
-    </li>
-  </div>
-  )
-}
+      <Navbar collapseOnSelect expand="lg" className="navbar">
+        <Container>
+          <Navbar.Brand href="/" className="brand">
+            <img src={logo} className="logo" alt="logo"></img>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              < NavLink to="/" className="nav">
+                {" "}
+                Home
+              </ NavLink>
+              <NavLink to="/research"  className="nav">
+                Research
+              </NavLink>
+              < NavLink to="/projects" className="nav">
+                Projects
+              </ NavLink>
+              < NavLink to="/events" className="nav">
+                Events
+              </ NavLink>
+              < NavLink to="/people" className="nav">
+                Peoples
+              </ NavLink>
+              < NavLink to="/collabration" className="nav">
+                Collabrations
+              </ NavLink>
+              <NavDropdown  title="More" id="navbarScrollingDropdown">
+                <Container className='navbar'>
+                < NavLink to="/gallery" className="nav">
+                Gallery
+                </ NavLink>
+                 
+                < NavLink to="/blogs" className="nav">
+                Blogs
+              </ NavLink>
+              
+              </Container>
+                
+              </NavDropdown>
+              
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
 
-export default Navbar
+export default NavBar;

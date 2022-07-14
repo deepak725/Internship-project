@@ -1,7 +1,7 @@
 import Research from './SanityClient/Research';
 import './App.css'
 import Project from './SanityClient/Project';
-import Navbar from './Components/NavBar/Navbar';
+import NavBar from './Components/NavBar/Navbar';
 import Home from './Components/Home/Home';
 import Event from './SanityClient/Event';
 import Gallery from './Components/Gallery/Gallery';
@@ -14,7 +14,7 @@ const App = () => {
   return <div className='App'>
      
      <BrowserRouter>
-     <Navbar/>
+     <NavBar/>
       <Routes>
         <Route path='/'  element={<Home />} />
         <Route path='/research' element={<Research/>} />

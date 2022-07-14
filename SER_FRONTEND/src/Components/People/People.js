@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import sanityClient from "../../SanityClient/client.js";
 import defaults from "./defaults.png";
 import imageUrlBuilder from '@sanity/image-url'
+import './people.css';
+import PeopleCard from './PeopleCard.js';
+
 const People = () => {
 
     const builder = imageUrlBuilder(sanityClient)
@@ -12,7 +15,7 @@ const People = () => {
     const [peopleData,setPeopleData] = useState([]);
     useEffect(()=>{
 
-        sanityClient.fetch(`*[_type == 'People']{
+        sanityClient.fetch(`*[_type == 'People'] | order(_createdAt asc){
             Name,
             "imageUrl": Profilephoto.asset->url,
             slug,
@@ -27,28 +30,20 @@ const People = () => {
 
     },[])
   return (
-    <div>
+    <div className='people'>
+      <div className='grid'>
          {peopleData.length > 0 && (
-        <div>
+        <div className='flex'>
           {peopleData.map((data, i) => (
-            <ul key={i}>
-              <li>
-                    {data?.Name}
-                    <br></br>
-                    {data?.About}
-                    <br></br>
-                    {data?.Qualification}
-                    <br></br>
-                    {data?.display ? <p>true</p>:<p>false</p>}
-                    <br></br>
-                    {data?.slug.current}
-                    {data?.imageUrl == null ? <img src={defaults} alt="Gallery-images"/>:<img src={urlFor(data?.imageUrl).url()} alt="Gallery-images"/> }
-              </li>
-            </ul>
+           
+          <div key={i} >
+           <PeopleCard  name={data?.Name} about={data?.About} Qualification={data?.Qualification} img={data?.imageUrl == null ? defaults: urlFor(data?.imageUrl).url()}/>
+              </div>   
           ))} 
 
 
          </div>)}
+    </div>
     </div>
   )
 }
