@@ -31,13 +31,13 @@ const People = () => {
     },[])
   return (
     <div className='people'>
-      <div className='grid'>
+      <div>
          {peopleData.length > 0 && (
         <div className='flex'>
           {peopleData.map((data, i) => (
            
           <div key={i} >
-           <PeopleCard  name={data?.Name} about={data?.About} Qualification={data?.Qualification} img={data?.imageUrl == null ? defaults: urlFor(data?.imageUrl).url()}/>
+           <PeopleCard  name={data?.Name} id={i} about={data?.About} Qualification={data?.Qualification} img={data?.imageUrl == null ? defaults: urlFor(data?.imageUrl).url()}/>
               </div>   
           ))} 
 

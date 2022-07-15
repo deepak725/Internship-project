@@ -1,5 +1,10 @@
 *{
     margin:0%;
     padding:0%;
-   
+    /* background: linear-gradient(180deg, #187388 8.85%, #ffffff 100%); */
+
   }
+
+.App{
+  background-color: linear-gradient(180deg, #187388 8.85%, #ffffff 100%);
+}

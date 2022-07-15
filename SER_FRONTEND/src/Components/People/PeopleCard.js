@@ -1,6 +1,7 @@
 import React from 'react'
 
 const PeopleCard = (props) => {
+   
   return (
     <div className="card-container">
     	<h3 className='name'>{props.name}</h3>
@@ -8,6 +9,8 @@ const PeopleCard = (props) => {
 
 	<p className='text'> {props.about} </p>
 	<p className='text'>Qualification : {props.Qualification}</p>
+    
+    
     </div>
   )
 }

@@ -3,17 +3,7 @@
   width: 100%;
   height: 100%;
 }
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 3;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* border: 2px solid black; */
-  /* width: 100%; */
-  height: 100%;
-}
+
 
 .flex{
     display: flex;
@@ -26,7 +16,7 @@
 }
 /* Card css for PeopleCard.js */
 .card-container {
-  background-color: #231e39;
+  /* background-color: #231e39; */
   border-radius: 5px;
   margin-left: 50px;
   background: conic-gradient(
@@ -41,10 +31,14 @@
   position: relative;
   width: 300px;
   max-width: 100%;
+  max-height: 100%;     
+  height: 350px;
   margin-top: 4%;
   text-align: center;
+  margin-bottom: 4%;
 
 }
+
 
 .card-container .round {
   border: 1px solid transparent;
@@ -68,3 +62,29 @@
   font-weight: 700;
   color: white;
 }
+
+.card-container:hover{
+    border: 2px solid white;
+    /* transition: border 1s ease-in 2ms;    */
+}
+
+@media only screen and (max-width: 425px) {
+    
+    .card-container{
+            width: 290px;
+            height: 290px;
+            margin-left: 0%;
+           
+    }
+
+    .text{
+        font-size: 70%;
+    }
+
+  }
+
+  @media screen and (max-width:320px) {
+   .card-container{
+    margin-right: 10px;
+   } 
+  }

@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from '../../SanityClient/client.js';
 import imageUrlBuilder from '@sanity/image-url'
-import PortableText from '@sanity/block-content-to-react'
+import './collabration.css';
+import CollabCard from "./collabCard.js";
+// import CollabToast from "./CollabToast.js";
+// import PortableText from '@sanity/block-content-to-react'
 
 export default function Collabration() {
-    const serializers = {
     
-        marks: {
-            // internalLink: ({mark, children}) => {
-            //   const {slug = {}} = mark
-            //   const href = `people/${slug.current}`
-            //   return <a href={href}>{children}</a>
-            // },
-            link: ({mark, children}) => {
-              // Read https://css-tricks.com/use-target_blank/
-              const { href } = mark
-              return  <a href={href} target="_blank" rel="noreferrer">{children}</a>
-            }
-          }
-        
-      };
         const [collabData,setcollabData] = useState([]);
         useEffect(()=>{
             sanityClient.fetch(`*[_type == 'collabrations']{
@@ -41,21 +29,22 @@ export default function Collabration() {
         }
 
         return(
-            <div>
-                collabration
+            <div className="collabration">
+              
 
                 {collabData.length>0 && (
-                    <div>
+                    <div className="flex">
                     {
                        collabData.map((data, i) => (
 
-                        <div key={i}>
-                              <i>{data?.name}</i>  
-                              <img src={urlFor(data?.imageUrl).width(200).url()} alt="Gallery-images"/>
-                              <PortableText blocks= {data?.collab_description} serializers={serializers} />
+                        <div key={i} >
+                              {/* <i>{data?.name}</i>   */}
+                            <CollabCard img={urlFor(data?.imageUrl).width(200).url()} name={data?.name} desc = {data?.collab_description}  />
+                              {/* <img src={} alt="Gallery-images"/> */}
 
 
                         </div>
+                   
                         
                         ))
                     }     

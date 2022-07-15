@@ -1,4 +1,4 @@
-import Research from './SanityClient/Research';
+import Research from './Components/Research/Research';
 import './App.css'
 import Project from './SanityClient/Project';
 import NavBar from './Components/NavBar/Navbar';
