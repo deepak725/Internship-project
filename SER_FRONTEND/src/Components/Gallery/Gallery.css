@@ -2,3 +2,69 @@
     background: linear-gradient(180deg, #187388 8.85%, #ffffff 100%);
    
 }
+.img-grid{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    display: grid;
+    gap: 50px 50px;
+    /* column-gap: ; */
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid black; */
+    /* margin-top: 5%; */
+}
+.img-single{
+    height: 300px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px;
+    /* z-index: 1; */
+    transition: width 2s, height 4s;
+    /* position: relative; */
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.imageTitle{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.589);
+    color: white;
+    transform: translateY(-40px);
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.img-single:hover {
+    cursor: pointer;
+    border-color: black;
+
+    box-shadow: 0 50px 50px;
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+        .img-grid{
+            grid-template-columns: auto auto;
+   
+        }
+    
+}
+
+@media only screen and (max-width: 425px) {
+
+    .img-grid{
+        grid-template-columns: auto ;
+
+    }
+
+}

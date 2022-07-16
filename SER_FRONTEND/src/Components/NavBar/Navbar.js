@@ -31,7 +31,7 @@ const NavBar = () => {
                 Events
               </ NavLink>
               < NavLink to="/people" className="nav">
-                Peoples
+                People
               </ NavLink>
               < NavLink to="/collabration" className="nav">
                 Collabrations

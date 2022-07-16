@@ -10,27 +10,44 @@ export default {
         validation: Rule => Rule.required()
       },
       {
-          name:'description',
-          title:'Description',
-          type: 'array', 
-          of: [{type: 'block',
-          marks: {
-            annotations: [
+        name:'description',
+        title:'Project Details',
+        type: 'array', 
+        of: [{type: 'block',
+        marks: {
+          annotations: [
+            {
+              name: 'internalLink',
+              type: 'object',
+              title: 'Internal link',
+              fields: [
                 {
-                    name: 'link',
-                    type: 'object',
-                    title: 'External link',
-                    fields: [
-                      {
-                        name: 'href',
-                        type: 'url',
-                        title: 'URL'
-                      }
-                     
-                    ]
-                  }]}}],
-          validation: Rule=> Rule.required()
-      },
+                  name: 'reference',
+                  type: 'reference',
+                  title: 'Reference',
+                  to: [
+                    { type: 'People' },
+                    // other types you may want to link to
+                  ]
+                }
+              ]
+            },
+              {
+                  name: 'link',
+                  type: 'object',
+                  title: 'External link',
+                  fields: [
+                    {
+                      name: 'href',
+                      type: 'url',
+                      title: 'URL'
+                    }
+                   
+                  ]
+                }]}}],
+        validation: Rule=> Rule.required()
+    },
+      
       {
         name: 'slug',
         title: 'Slug',
@@ -41,12 +58,6 @@ export default {
           maxLength: 96,
         },
       },
-      {
-        name: 'SponsoringAgency',
-        type: 'string',
-        title: 'Sponsoring Agency',
-        validation: Rule => Rule.required()
-    },
     {
         title: 'Project Start date',
         name: 'startDate',
@@ -59,17 +70,6 @@ export default {
         type:  'datetime',
         validation: Rule => Rule.required().min(Rule.valueOfField('startDate'))
       },
-      {
-        name: 'PI',
-        type: "reference",
-        to:[{type:'People'}],
-        title: 'Principal Investigator',
-        validation: Rule => Rule.required()
-      },{
-        name: 'CoPI',
-        type: "reference",
-        to:[{type:'People'}],
-        title: 'Co Principal Investigator'
-      },
+     
     ]
   }

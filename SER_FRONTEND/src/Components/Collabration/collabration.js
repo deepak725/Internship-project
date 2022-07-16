@@ -30,7 +30,8 @@ export default function Collabration() {
 
         return(
             <div className="collabration">
-              
+               <p className='Rtitle'>Industry collabrations</p>
+                <hr/>
 
                 {collabData.length>0 && (
                     <div className="flex">

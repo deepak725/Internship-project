@@ -29,13 +29,16 @@ export default function Gallary() {
 
   return (
     <div className="gallery">
+       <p className='Rtitle'>Gallery</p>
+                <hr/>
       {galleryData.length > 0 && (
        <div className="img-grid">
           {galleryData.map((data, i) => (
               
-              <div> 
-                <i > {data?.imagetitle} </i> 
-              <img src={urlFor(data?.imageUrl).url()} alt="Gallery-images"/>
+              <div key={i} className="img-container"> 
+              
+              <img className="img-single" src={urlFor(data?.imageUrl).url()}  alt="Gallery-images"/>
+              <p className="imageTitle">{data?.imagetitle}</p>
               </div>
            
           ))}

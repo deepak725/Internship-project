@@ -31,6 +31,8 @@ const People = () => {
     },[])
   return (
     <div className='people'>
+      <p className='Rtitle'>Lab Members</p>
+      <hr/>
       <div>
          {peopleData.length > 0 && (
         <div className='flex'>
