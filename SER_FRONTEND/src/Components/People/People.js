@@ -31,6 +31,7 @@ const People = () => {
     },[])
   return (
     <div className='people'>
+       <div className="cover">
       <p className='Rtitle'>Lab Members</p>
       <hr/>
       <div>
@@ -45,6 +46,7 @@ const People = () => {
 
 
          </div>)}
+    </div>
     </div>
     </div>
   )

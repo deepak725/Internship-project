@@ -29,8 +29,9 @@ export default function Gallary() {
 
   return (
     <div className="gallery">
+       <div className="cover">
        <p className='Rtitle'>Gallery</p>
-                <hr/>
+        <hr/>
       {galleryData.length > 0 && (
        <div className="img-grid">
           {galleryData.map((data, i) => (
@@ -46,7 +47,7 @@ export default function Gallary() {
         </div>
       )}
       
-      
+      </div>
       </div>
    
   );

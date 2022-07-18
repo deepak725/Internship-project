@@ -1,25 +1,19 @@
 .collabration{
 
-    background: linear-gradient(180deg, #187388 8.85%, #ffffff 100%);
-   
+    background: white;
     width: 100%;
     height: 100%;
 }
 
 .collab-container{
-    /* border-radius: 10px;
-  margin-left: 50px;
+    
   background: white;
-  padding-top: 30px;
-  position: relative;
   width: 300px;
   max-width: 100%;
   max-height: 100%;     
-  height: 250px;
-  margin-top: 4%;
+  height: 500px;
   text-align: center;
-  margin-bottom: 5%; */
-
+  
  
     position: relative;
     justify-content: center;
@@ -39,10 +33,10 @@
     background: transparent;
     border: none;
     margin: 5%;
-    align-items: center;
+    /* align-items: center;
     justify-content: center;
-    /* display: flex; */
-   
+    display: flex;
+    */
 }
 .collab-container .card .face{
     width: 300px;
@@ -107,7 +101,7 @@
 {
     margin: 0;
     padding: 0;
-    font-size: 80%;
+    font-size: 70%;
     text-align: justify;
     
 }

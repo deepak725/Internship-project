@@ -30,6 +30,7 @@ export default function Collabration() {
 
         return(
             <div className="collabration">
+              <div className="cover">
                <p className='Rtitle'>Industry collabrations</p>
                 <hr/>
 
@@ -51,7 +52,7 @@ export default function Collabration() {
                     }     
                    
                     </div> ) }
-
+                    </div>
             </div>
         );
 

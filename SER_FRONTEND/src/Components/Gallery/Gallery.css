@@ -1,6 +1,5 @@
 .gallery{
-    background: linear-gradient(180deg, #187388 8.85%, #ffffff 100%);
-   
+    background:white;
 }
 .img-grid{
     /* display: flex; */
@@ -20,7 +19,7 @@
 .img-single{
     height: 300px;
     width: 300px;
-    border: 2px solid white;
+    border: 2px solid teal;
     border-radius: 10px;
     box-shadow: 0 20px 50px;
     /* z-index: 1; */
@@ -45,7 +44,7 @@
 
 .img-single:hover {
     cursor: pointer;
-    border-color: black;
+    border-color: gray;
 
     box-shadow: 0 50px 50px;
   

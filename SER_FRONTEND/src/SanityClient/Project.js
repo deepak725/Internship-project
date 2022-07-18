@@ -61,6 +61,7 @@ export default function Project(){
 
         //same css as research
       <div className="research">
+        <div className="cover">
        <p className="Rtitle"> Projects </p>
         <div >
           <hr/>
@@ -86,6 +87,7 @@ export default function Project(){
             ))}
           </div>
         )}
+        </div>
         </div>
       </div>
   

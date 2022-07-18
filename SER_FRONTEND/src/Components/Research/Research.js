@@ -84,15 +84,16 @@ export default function Project() {
 
   return (
     <div className="research">
+     <div className="cover">
      <p className="Rtitle"> Research </p>
+     
       <div >
         <hr/>
-        <p className="categorytitle">Categories :</p>
-
+       
         {categories.length > 0 && (
           
           <div className="Categories">
-            
+          
             <div
             className={id === -1 ?"eachCategory2":"eachCategory"}
             onClick={() => {
@@ -110,7 +111,7 @@ export default function Project() {
                 setId(-1);
             }}
           >
-            All
+            All 
           </div>
             {categories.map((data, i) => (
               <div key={i}>
@@ -134,6 +135,7 @@ export default function Project() {
 
       <div>
       <hr/> 
+      </div>
             {research.length > 0 && (
         <div className="research-data">
          

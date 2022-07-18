@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import sanityClient from "./client.js";
+import sanityClient from "../../SanityClient/client.js";
 // import "./Research.css";
 // import PortableText from "react-portable-text";
 import PortableText from '@sanity/block-content-to-react'
@@ -44,9 +44,11 @@ const Event = () => {
       }
   return (
     <div>
-
+ <div className="cover">
+       <p className="Rtitle"> Events </p>
+       <hr/>
     {eventData.length > 0 && (
-        <div>
+        <div className='research-data'>
           {eventData.map((data, i) => (
             <ul key={i}>
               <li>
@@ -62,7 +64,7 @@ const Event = () => {
           ))}
         </div>
       )}
-        
+        </div>
     </div>
   )
 }
