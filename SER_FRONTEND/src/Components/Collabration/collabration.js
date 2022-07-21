@@ -7,7 +7,7 @@ import CollabCard from "./collabCard.js";
 // import PortableText from '@sanity/block-content-to-react'
 
 export default function Collabration() {
-    
+  
         const [collabData,setcollabData] = useState([]);
         useEffect(()=>{
             sanityClient.fetch(`*[_type == 'collabrations']{

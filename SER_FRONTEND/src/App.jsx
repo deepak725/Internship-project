@@ -25,7 +25,7 @@ const App = () => {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/people' element={<People />} />
         <Route path='/collabration' element={<Collabration/>} />
-      </Routes>
+       </Routes>
       <Footer />
     </BrowserRouter>
     </div>;

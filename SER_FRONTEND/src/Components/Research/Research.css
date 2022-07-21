@@ -55,8 +55,7 @@
 }
 
 .research-data{
-
-    display: flex;
+  display: flex;
     flex-direction: column;
     justify-content: center;
     /* font-family: 'Ibarra Real Nova', serif; */
@@ -67,6 +66,7 @@
    
     text-align: justify;
 }
+
 
 
 .fonticon{

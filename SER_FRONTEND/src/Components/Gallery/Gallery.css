@@ -21,7 +21,7 @@
     width: 300px;
     border: 2px solid teal;
     border-radius: 10px;
-    box-shadow: 0 20px 50px;
+    box-shadow: 0 10px 10px;
     /* z-index: 1; */
     transition: width 2s, height 4s;
     /* position: relative; */
@@ -46,7 +46,7 @@
     cursor: pointer;
     border-color: gray;
 
-    box-shadow: 0 50px 50px;
+    box-shadow: 0 20px 20px;
   
 }
 
