@@ -1,10 +1,10 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import PortableText from "@sanity/block-content-to-react";
-import "./collabration.css"
+import "./collabration.css";
 import CustomPopup from "./CustomPopup.js";
 const CollabCard = (props) => {
   const [visibility, setVisibility] = useState(false);
- 
+
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
@@ -28,26 +28,21 @@ const CollabCard = (props) => {
   };
   return (
     <>
-    
       <div className={"collab-container"}>
-
-          <div  className="card"  onClick={(e) => setVisibility(!visibility)} >
-            <div className="imgBox">
-              <img src={props.img} alt="alter" />
-            </div>
-           
+        <div className="card" onClick={(e) => setVisibility(!visibility)}>
+          <div className="imgBox">
+            <img src={props.img} alt="alter" />
+          </div>
 
           <CustomPopup
-        onClose={popupCloseHandler}
-        show={visibility}
-        title={props.name}
-      >
-        <PortableText blocks={props.desc} serializers={serializers} />
-      </CustomPopup>
+            onClose={popupCloseHandler}
+            show={visibility}
+            title={props.name}
+          >
+            <PortableText blocks={props.desc} serializers={serializers} />
+          </CustomPopup>
         </div>
-       
       </div>
-     
     </>
   );
 };

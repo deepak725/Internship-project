@@ -17,7 +17,7 @@ const CustomPopup = (props) => {
     <div
       style={{
         visibility: show ? "visible" : "hidden",
-        opacity: show ? "1" : "0"
+        opacity: show ? "1" : "0",
       }}
       className={"overlay"}
     >
@@ -35,6 +35,6 @@ const CustomPopup = (props) => {
 CustomPopup.propTypes = {
   title: PropTypes.string.isRequired,
   show: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
 };
 export default CustomPopup;
